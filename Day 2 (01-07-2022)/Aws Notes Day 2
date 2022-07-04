@@ -1,0 +1,49 @@
+Scalability:---
+Scalability involves beginning with only the resources you need and designing your architecture to automatically respond to changing demand by scaling out or in. As a result, you pay for only the resources you use. You don’t have to worry about a lack of computing capacity to meet your customers’ needs.
+If you wanted the scaling process to happen automatically, which AWS service would you use? The AWS service that provides this functionality for Amazon EC2 instances is Amazon EC2 Auto Scaling.
+
+
+
+Amazon EC2 Auto Scaling :--
+
+If you’ve tried to access a website that wouldn’t load and frequently timed out, the website might have received more requests than it was able to handle. This situation is similar to waiting in a long line at a coffee shop, when there is only one barista present to take orders from customers.
+Within Amazon EC2 Auto Scaling, you can use two approaches: dynamic scaling and predictive scaling.
+
+1.Dynamic scaling responds to changing demand. 
+2.Predictive scaling automatically schedules the right number of Amazon EC2 instances based on predicted demand.
+
+
+The minimum capacity is the number of Amazon EC2 instances that launch immediately after you have created the Auto Scaling group. In this example, the Auto Scaling group has a minimum capacity of one Amazon EC2 instance.
+Next, you can set the desired capacity at two Amazon EC2 instances even though your application needs a minimum of a single Amazon EC2 instance to run.
+The third configuration that you can set in an Auto Scaling group is the maximum capacity. For example, you might configure the Auto Scaling group to scale out in response to increased demand, but only to a maximum of four Amazon EC2 instances.
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Elastic Load Balancing :--
+Elastic Load Balancing is the AWS service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances. 
+A load balancer acts as a single point of contact for all incoming web traffic to your Auto Scaling group. This means that as you add or remove Amazon EC2 instances in response to the amount of incoming traffic, these requests route to the load balancer first.
+ 
+1)Loosly coupled
+2)Tightly coupled
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+Amazon Simple Queue Service (Amazon SQS):--
+Amazon Simple Queue Service (Amazon SQS) is a message queuing service. 
+Using Amazon SQS, you can send, store, and receive messages between software components, without losing messages or requiring other services to be available. In Amazon SQS, an application sends messages into a queue. A user or service retrieves a message from the queue, processes it, and then deletes it from the queue.
+
+
+Amazon Simple Notification Service (Amazon SNS) :--
+Amazon Simple Notification Service (Amazon SNS) is a publish/subscribe service. Using Amazon SNS topics, a publisher publishes messages to subscribers. This is similar to the coffee shop; the cashier provides coffee orders to the barista who makes the drinks.
+In Amazon SNS, subscribers can be web servers, email addresses, AWS Lambda functions, or several other options. 
+
+________________________________________________________________________
+
+Monolithic application. :--
+Suppose that you have an application with tightly coupled components. These components might include databases, servers, the user interface, business logic, and so on. This type of architecture can be considered a monolithic application. 
+
+microservices :--
+To help maintain application availability when a single component fails, you can design your application through a microservices approach.
+In a microservices approach, application components are loosely coupled. In this case, if a single component fails, the other components continue to work because they are communicating with each other. The loose coupling prevents the entire application from failing.
